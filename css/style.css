@@ -1,0 +1,970 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Ultralight.eot");
+  src: local("Neue Machina Ultralight"), local("NeueMachina-Ultralight"), url("../font/NeueMachina-Ultralight.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Ultralight.woff2") format("woff2"), url("../font/NeueMachina-Ultralight.woff") format("woff"), url("../font/NeueMachina-Ultralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Light.eot");
+  src: local("Neue Machina Light"), local("NeueMachina-Light"), url("../font/NeueMachina-Light.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Light.woff2") format("woff2"), url("../font/NeueMachina-Light.woff") format("woff"), url("../font/NeueMachina-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Black.eot");
+  src: local("Neue Machina Black"), local("NeueMachina-Black"), url("../font/NeueMachina-Black.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Black.woff2") format("woff2"), url("../font/NeueMachina-Black.woff") format("woff"), url("../font/NeueMachina-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Regular.eot");
+  src: local("Neue Machina Regular"), local("NeueMachina-Regular"), url("../font/NeueMachina-Regular.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Regular.woff2") format("woff2"), url("../font/NeueMachina-Regular.woff") format("woff"), url("../font/NeueMachina-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Bold.eot");
+  src: local("Neue Machina Bold"), local("NeueMachina-Bold"), url("../font/NeueMachina-Bold.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Bold.woff2") format("woff2"), url("../font/NeueMachina-Bold.woff") format("woff"), url("../font/NeueMachina-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Medium.eot");
+  src: local("Neue Machina Medium"), local("NeueMachina-Medium"), url("../font/NeueMachina-Medium.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Medium.woff2") format("woff2"), url("../font/NeueMachina-Medium.woff") format("woff"), url("../font/NeueMachina-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Ultrabold.eot");
+  src: local("Neue Machina Ultrabold"), local("NeueMachina-Ultrabold"), url("../font/NeueMachina-Ultrabold.eot?#iefix") format("embedded-opentype"), url("../font/NeueMachina-Ultrabold.woff2") format("woff2"), url("../font/NeueMachina-Ultrabold.woff") format("woff"), url("../font/NeueMachina-Ultrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background: var(--bg-navy-blue, linear-gradient(135deg, #000115 0%, #000113 100%));
+}
+
+header {
+  width: 100%;
+  max-width: 982px;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  z-index: 999;
+}
+header .HeadLinks {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+header .HeadLinks a {
+  all: unset;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 500;
+  line-height: 125%;
+  cursor: pointer;
+}
+header .HeadLinks #GoToVideo {
+  all: unset;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 125%;
+  padding: 10px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--bg-white, rgba(255, 255, 255, 0.06));
+  border-radius: 8px;
+  cursor: pointer;
+}
+header .HeadLinks #GoToVideo:hover {
+  background: rgba(255, 255, 255, 0.126);
+}
+
+.conteiner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+.conteiner .VideoWindow {
+  display: flex;
+  width: 250px;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(155, 7, 213, 0.537254902) 0%, rgba(8, 226, 171, 0.5725490196) 100%);
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  padding: 26px 34px 32px 34px;
+  border-radius: 8px;
+  z-index: 8;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.conteiner .VideoWindow:hover {
+  box-shadow: 0px 0px 76px 0px rgba(107, 210, 164, 0.4);
+  background: linear-gradient(135deg, #9A07D5 0%, #08E2AC 100%);
+}
+.conteiner .VideoWindow div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.conteiner .VideoWindow div img {
+  width: 54px;
+}
+.conteiner #home {
+  height: 100vh;
+  max-height: 792px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/3d0.png);
+}
+.conteiner #home .HomeTitles {
+  max-width: 728px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.conteiner #home .HomeTitles h1 {
+  font-size: 48px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -1.2px;
+  text-transform: uppercase;
+}
+.conteiner #home .HomeTitles p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 137.5%;
+  opacity: 0.8000000119;
+  color: white;
+}
+.conteiner #home .HomeTitles button {
+  all: unset;
+  box-shadow: 0px 0px 56px 0px rgba(107, 210, 164, 0.24);
+  background: var(--bg-blue-button-cards, linear-gradient(135deg, #000e2a 0%, #000020 100%));
+  border-radius: 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px 48px;
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 137.5%;
+  color: rgb(255, 255, 255);
+  opacity: 0.8000000119;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.conteiner #home .HomeTitles button:hover {
+  box-shadow: 0px 0px 96px 0px rgba(107, 210, 164, 0.56);
+  border: 2px solid;
+  -o-border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+     border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+  border-radius: 12px;
+}
+.conteiner #acquaintance {
+  height: 100vh;
+  max-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conteiner #acquaintance .acquaintanceTitles {
+  width: 100%;
+  max-width: 912px;
+  height: 492px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+.conteiner #acquaintance .acquaintanceTitles .topSide {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+.conteiner #acquaintance .acquaintanceTitles .topSide .maskItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.conteiner #acquaintance .acquaintanceTitles .topSide .maskItem .maskItemName p {
+  font-size: 20px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  opacity: 0.8000000119;
+}
+.conteiner #acquaintance .acquaintanceTitles .topSide .maskItem .maskItemName span {
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+  opacity: 0.6000000238;
+}
+.conteiner #acquaintance .acquaintanceTitles .topSide .title {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  text-align: center;
+  opacity: 0.8000000119;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem h2 {
+  font-size: 20px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  opacity: 0.6000000238;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 125%;
+  opacity: 0.6000000238;
+}
+.conteiner #approaches {
+  height: 256vh;
+  max-height: 1598px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conteiner #approaches .approachesTitles {
+  width: 50%;
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.conteiner #approaches .approachesTitles h1 {
+  font-size: 32px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.8px;
+  text-transform: uppercase;
+  opacity: 0.8000000119;
+}
+.conteiner #approaches .approachesTitles h1 span {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.conteiner #approaches .approachesTitles .TitleItems {
+  max-width: 480px;
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0.8999999762;
+}
+.conteiner #approaches .approachesImg {
+  width: 50%;
+  max-width: 395px;
+  margin-left: -10%;
+}
+.conteiner #services {
+  height: 100vh;
+  max-height: 951px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.conteiner #services .servicesTitle {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.conteiner #services .servicesTitle .head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+.conteiner #services .servicesTitle .head h4 {
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.conteiner #services .servicesTitle .head h1 {
+  font-size: 32px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.8px;
+  text-transform: uppercase;
+}
+.conteiner #services .servicesTitle .servicesWraper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.conteiner #services .servicesTitle .servicesWraper .wrapItem {
+  height: 187px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--bg-blue-button-cards, linear-gradient(135deg, #000e2a 0%, #000020 100%));
+  cursor: pointer;
+}
+.conteiner #services .servicesTitle .servicesWraper .wrapItem:hover {
+  box-shadow: 0px 0px 86px 0px rgba(107, 210, 164, 0.4);
+  border: 1px solid;
+  -o-border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+     border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+}
+.conteiner #services .servicesTitle .servicesWraper .wrapItem p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 137.5%;
+  opacity: 0.6999999762;
+}
+.conteiner #services .servicesBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../img/3d2.png);
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.conteiner #study {
+  height: 100vh;
+  max-height: 585px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conteiner #study .studyTitle {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-left: 15%;
+}
+.conteiner #study .studyTitle h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+}
+.conteiner #study .studyTitle h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+}
+.conteiner #study .studyTitle p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+}
+.conteiner #study .studyImg {
+  width: 50%;
+  margin-top: -7%;
+  margin-left: -10%;
+}
+.conteiner #redesign {
+  height: 100vh;
+  max-height: 789px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.conteiner #redesign .redesignTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.conteiner #redesign .redesignTitle .redesignText {
+  width: 100%;
+  max-width: 630px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+}
+.conteiner #redesign .redesignTitle .redesignText h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+  opacity: 0.6999999881;
+}
+.conteiner #redesign .redesignTitle .redesignText h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+}
+.conteiner #redesign .redesignTitle .redesignText p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+}
+.conteiner #redesign .redesignTitle .redesignImg {
+  width: 100%;
+}
+.conteiner #redesign .redesignTitle .redesignImg img {
+  width: 100%;
+}
+.conteiner #development {
+  height: 100vh;
+  max-height: 395px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.conteiner #development .developmentWrapper {
+  width: 100%;
+  max-width: 926px;
+  display: flex;
+  gap: 24px;
+}
+.conteiner #development .developmentWrapper .developmentImg {
+  width: 60%;
+  max-width: 441px;
+}
+.conteiner #development .developmentWrapper .developmentImg img {
+  width: 100%;
+}
+.conteiner #development .developmentWrapper .developmentTitles {
+  width: 50%;
+  max-width: 461px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.conteiner #development .developmentWrapper .developmentTitles h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+}
+.conteiner #development .developmentWrapper .developmentTitles h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+}
+.conteiner #development .developmentWrapper .developmentTitles p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+}
+.conteiner #programming {
+  height: 100vh;
+  max-height: 385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.conteiner #programming .programmingTitle {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.conteiner #programming .programmingTitle div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.conteiner #programming .programmingTitle h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+}
+.conteiner #programming .programmingTitle h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+}
+.conteiner #programming .programmingTitle p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+  max-width: 580px;
+  text-align: center;
+}
+.conteiner #programming .programmingTitle button {
+  all: unset;
+  box-shadow: 0px 0px 56px 0px rgba(107, 210, 164, 0.24);
+  background: var(--bg-blue-button-cards, linear-gradient(135deg, #000e2a 0%, #000020 100%));
+  border-radius: 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px 48px;
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 137.5%;
+  color: rgb(255, 255, 255);
+  opacity: 0.8000000119;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.conteiner #programming .programmingTitle button:hover {
+  box-shadow: 0px 0px 96px 0px rgba(107, 210, 164, 0.56);
+  border: 2px solid #9a07d5;
+  -o-border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+     border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+  border-radius: 12px;
+}
+.conteiner #production {
+  height: 100vh;
+  max-height: 606px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.conteiner #production .productionTitle {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.conteiner #production .productionTitle div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.conteiner #production .productionTitle div h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+  text-align: center;
+}
+.conteiner #production .productionTitle div h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.conteiner #production .productionTitle div p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+  max-width: 580px;
+  text-align: center;
+}
+.conteiner #production .productionTitle .langWrapper {
+  max-width: 480px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
+.conteiner #production .productionTitle .langWrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.conteiner #production .productionTitle .langWrapper .item img {
+  width: 56px;
+}
+.conteiner #production .productionTitle .langWrapper .item p {
+  font-size: 20px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  opacity: 0.8600000143;
+}
+.conteiner #developments {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 300px 0;
+  position: relative;
+}
+.conteiner #developments .developmentsTitle {
+  width: 100%;
+  height: 100vh;
+  max-height: 397px;
+  max-width: 912px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.conteiner #developments .developmentsTitle .info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.conteiner #developments .developmentsTitle .info h4 {
+  background: linear-gradient(90deg, rgb(154, 7, 213), rgb(8, 226, 172));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-family: "Neue Machina";
+  line-height: 100%;
+  text-align: center;
+}
+.conteiner #developments .developmentsTitle .info h1 {
+  font-size: 26px;
+  font-family: "Neue Machina";
+  line-height: 137.5%;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.conteiner #developments .developmentsTitle .info p {
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 150%;
+  opacity: 0.6000000238;
+  max-width: 580px;
+  text-align: center;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap .item {
+  max-width: 240px;
+  display: flex;
+  align-items: start;
+  height: 100%;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap .item p {
+  font-size: 20px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  opacity: 0.8000000119;
+}
+.conteiner #developments .developmentsbg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/3d4.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+footer {
+  background: var(--bg-white, rgba(255, 255, 255, 0.06));
+  width: 100%;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 942px;
+}
+footer div p {
+  font-size: 20px;
+  font-family: "Neue Machina";
+  line-height: 125%;
+  letter-spacing: -0.5px;
+  opacity: 0.6999999881;
+}
+footer div img {
+  filter: grayscale(100%);
+}
+
+.bg3d1 {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  top: 65%;
+}
+
+.bg3d2 {
+  position: absolute;
+  width: 300px;
+  left: 0;
+  top: 70%;
+}
+
+.otzivi {
+  margin-top: 250px !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 912px !important;
+  max-height: 1716px !important;
+}
+.otzivi .flex_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.otzivi .flex_box .otziv {
+  width: 100%;
+  height: auto;
+  background-color: #000e2a;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 137.5%;
+  opacity: 0.6999999762;
+}/*# sourceMappingURL=style.css.map */
+@media(max-width:1238px){
+  .conteiner #approaches .approachesImg img{
+    width: 500px;
+  }
+  .conteiner #study .studyImg img {
+    width: 560px;
+}
+}
+
+@media(max-width:1140px){
+  .conteiner #study {
+    height: 100vh;
+    flex-direction: column;
+}
+.conteiner #study .studyTitle {
+  margin-left: 0px;
+}
+.conteiner #approaches {
+  flex-direction: column;
+}
+.conteiner #approaches .approachesTitles {
+  margin-top: 100px;
+}
+.otzivi .flex_box .otziv {
+  font-size: 16px;
+}
+}
+
+@media (max-width: 750px){
+.conteiner #approaches .approachesImg {
+  display: none;
+}
+.conteiner #study .studyImg {
+  display: none;
+}
+}
+
+@media (max-width: 675px){
+footer div {
+  flex-direction: column;
+} 
+footer{
+  height: fit-content;
+}
+.conteiner #approaches {
+  max-height: 1961px;
+}
+}
+
+@media(max-width:566px){
+  .conteiner #acquaintance .acquaintanceTitles .botSide .infoItem h2 {
+    font-size: 18px;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem p {
+  font-size: 16px;
+}
+.conteiner #home .HomeTitles h1 {
+  font-size: 24px;
+}
+.conteiner #home .HomeTitles p {
+  font-size: 14px;
+}
+.conteiner #services .servicesTitle .head h1 {
+  font-size: 24px;
+}
+.conteiner #services .servicesTitle .servicesWraper .wrapItem p {
+  font-size: 14px;
+}
+.conteiner #study .studyTitle h1 {
+  font-size: 20px;
+}
+.conteiner #study .studyTitle p {
+  font-size: 16px;
+}
+.conteiner #redesign .redesignTitle .redesignText h1 {
+  font-size: 20px;
+}
+.conteiner #redesign .redesignTitle .redesignText p {
+  font-size: 14px;
+}
+.conteiner #development .developmentWrapper .developmentTitles h1 {
+  font-size: 20px;
+}
+.conteiner #development .developmentWrapper .developmentTitles p {
+  font-size: 16px;
+}
+.conteiner #approaches .approachesTitles {
+  margin-top: 350px;
+}
+}
+
+@media(max-width:500px){
+  header .HeadLinks #GoToVideo {
+    display: none;
+}
+element.style {
+}
+.conteiner #approaches .approachesTitles h1 {
+    font-size: 24px;
+}
+.conteiner #approaches .approachesTitles .TitleItems {
+  font-size: 14px;
+}
+}
+@media(max-width:460px){
+  .conteiner #approaches .approachesTitles {
+    margin-top: 600px;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem h2 {
+  font-size: 14px;
+}
+.conteiner #acquaintance .acquaintanceTitles .botSide .infoItem p {
+  font-size: 14px;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap .item p {
+  font-size: 14px;
+}
+.conteiner #developments .developmentsTitle .info p {
+  font-size: 16px;
+}
+.conteiner #development .developmentWrapper .developmentTitles h1 {
+  font-size: 14px;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap {
+  flex-direction: column;
+}
+.conteiner #developments .developmentsTitle .developmentsWrap .item {
+  margin-bottom: 20px;
+}
+.bg3d2 {
+  display: none;
+}
+.conteiner #approaches .approachesTitles {
+  margin-top: 1020px;
+}
+.conteiner #developments {
+  margin: 0px 0;
+}
+.conteiner #redesign {
+  margin-top:0px;
+}
+}
+@media(max-width:400px){
+  .conteiner #approaches .approachesTitles {
+    margin-top: 1450px;
+}
+.conteiner #services {
+  margin-top: 145px;
+}
+}
+
+

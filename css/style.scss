@@ -1,0 +1,919 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Ultralight.eot");
+  src: local("Neue Machina Ultralight"), local("NeueMachina-Ultralight"),
+    url("../font/NeueMachina-Ultralight.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Ultralight.woff2") format("woff2"),
+    url("../font/NeueMachina-Ultralight.woff") format("woff"),
+    url("../font/NeueMachina-Ultralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Light.eot");
+  src: local("Neue Machina Light"), local("NeueMachina-Light"),
+    url("../font/NeueMachina-Light.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Light.woff2") format("woff2"),
+    url("../font/NeueMachina-Light.woff") format("woff"),
+    url("../font/NeueMachina-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Black.eot");
+  src: local("Neue Machina Black"), local("NeueMachina-Black"),
+    url("../font/NeueMachina-Black.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Black.woff2") format("woff2"),
+    url("../font/NeueMachina-Black.woff") format("woff"),
+    url("../font/NeueMachina-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Regular.eot");
+  src: local("Neue Machina Regular"), local("NeueMachina-Regular"),
+    url("../font/NeueMachina-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Regular.woff2") format("woff2"),
+    url("../font/NeueMachina-Regular.woff") format("woff"),
+    url("../font/NeueMachina-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Bold.eot");
+  src: local("Neue Machina Bold"), local("NeueMachina-Bold"),
+    url("../font/NeueMachina-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Bold.woff2") format("woff2"),
+    url("../font/NeueMachina-Bold.woff") format("woff"),
+    url("../font/NeueMachina-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Medium.eot");
+  src: local("Neue Machina Medium"), local("NeueMachina-Medium"),
+    url("../font/NeueMachina-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Medium.woff2") format("woff2"),
+    url("../font/NeueMachina-Medium.woff") format("woff"),
+    url("../font/NeueMachina-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../font/NeueMachina-Ultrabold.eot");
+  src: local("Neue Machina Ultrabold"), local("NeueMachina-Ultrabold"),
+    url("../font/NeueMachina-Ultrabold.eot?#iefix") format("embedded-opentype"),
+    url("../font/NeueMachina-Ultrabold.woff2") format("woff2"),
+    url("../font/NeueMachina-Ultrabold.woff") format("woff"),
+    url("../font/NeueMachina-Ultrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //   font-family: "Inter";
+  color: white;
+}
+
+body {
+  background: var(
+    --bg-navy-blue,
+    linear-gradient(135deg, #000115 0%, #000113 100%)
+  );
+}
+header {
+  width: 100%;
+  max-width: 982px;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  z-index: 999;
+  .HeadLinks {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    a {
+      all: unset;
+      font-size: 16px;
+      font-family: "Inter";
+      font-weight: 500;
+      line-height: 125%;
+      cursor: pointer;
+    }
+    #GoToVideo {
+      all: unset;
+      font-size: 16px;
+      font-family: Inter;
+      font-weight: 500;
+      line-height: 125%;
+      padding: 10px 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: var(--bg-white, rgba(255, 255, 255, 0.06));
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover{
+        background: rgba(255, 255, 255, 0.126)
+
+      }
+    }
+  }
+}
+.conteiner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  .VideoWindow {
+    display: flex;
+    width: 250px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #9b07d589 0%, #08e2ab92 100%);
+    
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    padding: 26px 34px 32px 34px;
+    border-radius: 8px;
+    z-index: 8;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover{
+      box-shadow: 0px 0px 76px 0px rgba(107, 210, 164, 0.4);
+      background: linear-gradient(135deg, #9A07D5 0%, #08E2AC 100%);
+
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      img {
+        width: 54px;
+      }
+    }
+  }
+  #home {
+    height: 100vh;
+    max-height: 792px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/3d0.png);
+    .HomeTitles {
+      max-width: 728px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      h1 {
+        font-size: 48px;
+        font-family: "Neue Machina";
+        line-height: 125%;
+        letter-spacing: -1.2px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 137.5%;
+        opacity: 0.800000011920929;
+        color: white;
+      }
+      button {
+        all: unset;
+        box-shadow: 0px 0px 56px 0px rgba(107, 210, 164, 0.24);
+        background: var(
+          --bg-blue-button-cards,
+          linear-gradient(135deg, #000e2a 0%, #000020 100%)
+        );
+        border-radius: 12px;
+        width: fit-content;
+        padding: 20px 48px;
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 137.5%;
+        color: rgba(255, 255, 255, 1);
+        opacity: 0.800000011920929;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          box-shadow: 0px 0px 96px 0px rgba(107, 210, 164, 0.56);
+          border: 2px solid ;
+
+          border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+  #acquaintance {
+    height: 100vh;
+    max-height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .acquaintanceTitles {
+      width: 100%;
+      max-width: 912px;
+      height: 492px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 72px;
+      .topSide {
+        width: 100%;
+        max-width: 580px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // background-color: red;
+        gap: 48px;
+        .maskItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+          .maskItemName {
+            p {
+              font-size: 20px;
+              font-family: "Neue Machina";
+              line-height: 125%;
+              letter-spacing: -0.5px;
+              opacity: 0.800000011920929;
+            }
+            span {
+              font-size: 16px;
+              font-family: "Neue Machina";
+              line-height: 100%;
+              opacity: 0.6000000238418579;
+            }
+          }
+        }
+        .title {
+          font-size: 18px;
+          font-family: "Inter";
+          line-height: 150%;
+          text-align: center;
+          opacity: 0.800000011920929;
+        }
+      }
+      .botSide {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .infoItem {
+          width: 240px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+          h2 {
+            font-size: 20px;
+            font-family: "Neue Machina";
+            line-height: 125%;
+            letter-spacing: -0.5px;
+            opacity: 0.6000000238418579;
+          }
+          p {
+            font-size: 18px;
+            font-family: "Inter";
+            line-height: 125%;
+            opacity: 0.6000000238418579;
+          }
+        }
+      }
+    }
+  }
+  #approaches {
+    height: 256vh;
+    max-height: 1598px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .approachesTitles {
+      //   background-color: #000020;
+      width: 50%;
+      max-width: 670px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      h1 {
+        font-size: 32px;
+        font-family: "Neue Machina";
+        line-height: 125%;
+        letter-spacing: -0.8px;
+        text-transform: uppercase;
+        opacity: 0.800000011920929;
+        span {
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      .TitleItems {
+        max-width: 480px;
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 150%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        opacity: 0.8999999761581421;
+      }
+    }
+    .approachesImg {
+      width: 50%;
+      max-width: 395px;
+      margin-left: -10%;
+    }
+  }
+  #services {
+    height: 100vh;
+    max-height: 951px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    .servicesTitle {
+      width: 100%;
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+
+      //   background-color: red;
+      .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+        h4 {
+          font-size: 16px;
+          font-family: "Neue Machina";
+          line-height: 100%;
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        h1 {
+          font-size: 32px;
+          font-family: "Neue Machina";
+          line-height: 125%;
+          letter-spacing: -0.8px;
+          text-transform: uppercase;
+        }
+      }
+      .servicesWraper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        .wrapItem {
+          height: 187px;
+          padding: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 16px;
+          background: var(
+            --bg-blue-button-cards,
+            linear-gradient(135deg, #000e2a 0%, #000020 100%)
+          );
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0px 0px 86px 0px rgba(107, 210, 164, 0.4);
+            border: 1px solid;
+            border-image: linear-gradient(
+              135deg,
+              #9a07d5 0%,
+              #08e2ac 100%
+            )2;
+          }
+          p {
+            font-size: 18px;
+            font-family: "Inter";
+            line-height: 137.5%;
+            opacity: 0.6999999761581421;
+          }
+        }
+      }
+    }
+    .servicesBg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // background-color: red;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../img/3d2.png);
+      background-position: center;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+  #study {
+    height: 100vh;
+    max-height: 585px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .studyTitle {
+      width: 100%;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-left: 15%;
+      h4 {
+        background: linear-gradient(
+          90deg,
+          rgba(154, 7, 213, 1),
+          rgba(8, 226, 172, 1)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 16px;
+        font-family: "Neue Machina";
+        line-height: 100%;
+      }
+      h1 {
+        font-size: 26px;
+        font-family: "Neue Machina";
+        line-height: 137.5%;
+        letter-spacing: -0.65px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 150%;
+        opacity: 0.6000000238418579;
+      }
+    }
+    .studyImg {
+      width: 50%;
+      //   max-width: 395px;
+      margin-top: -7%;
+      margin-left: -10%;
+    }
+  }
+  #redesign {
+    height: 100vh;
+    max-height: 789px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    .redesignTitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .redesignText {
+        width: 100%;
+        max-width: 630px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        h4 {
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 16px;
+          font-family: "Neue Machina";
+          line-height: 100%;
+          opacity: 0.699999988079071;
+        }
+        h1 {
+          font-size: 26px;
+          font-family: "Neue Machina";
+          line-height: 137.5%;
+          letter-spacing: -0.65px;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 18px;
+          font-family: "Inter";
+          line-height: 150%;
+          opacity: 0.6000000238418579;
+        }
+      }
+      .redesignImg {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #development {
+    height: 100vh;
+    max-height: 395px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    .developmentWrapper {
+      width: 100%;
+      max-width: 926px;
+      display: flex;
+      gap: 24px;
+      .developmentImg {
+        width: 60%;
+        max-width: 441px;
+        img {
+          width: 100%;
+        }
+      }
+      .developmentTitles {
+        width: 50%;
+        max-width: 461px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        h4 {
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 16px;
+          font-family: "Neue Machina";
+          line-height: 100%;
+        }
+        h1 {
+          font-size: 26px;
+          font-family: "Neue Machina";
+          line-height: 137.5%;
+          letter-spacing: -0.65px;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 18px;
+          font-family: "Inter";
+          line-height: 150%;
+          opacity: 0.6000000238418579;
+        }
+      }
+    }
+  }
+  #programming {
+    height: 100vh;
+    max-height: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+
+    .programmingTitle {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+      h4 {
+        background: linear-gradient(
+          90deg,
+          rgba(154, 7, 213, 1),
+          rgba(8, 226, 172, 1)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 16px;
+        font-family: "Neue Machina";
+        line-height: 100%;
+      }
+      h1 {
+        font-size: 26px;
+        font-family: "Neue Machina";
+        line-height: 137.5%;
+        letter-spacing: -0.65px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 150%;
+        opacity: 0.6000000238418579;
+        max-width: 580px;
+        text-align: center;
+      }
+      button {
+        all: unset;
+        box-shadow: 0px 0px 56px 0px rgba(107, 210, 164, 0.24);
+        background: var(
+          --bg-blue-button-cards,
+          linear-gradient(135deg, #000e2a 0%, #000020 100%)
+        );
+        border-radius: 12px;
+        width: fit-content;
+        padding: 20px 48px;
+        font-size: 18px;
+        font-family: "Inter";
+        line-height: 137.5%;
+        color: rgba(255, 255, 255, 1);
+        opacity: 0.800000011920929;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+          box-shadow: 0px 0px 96px 0px rgba(107, 210, 164, 0.56);
+          border: 2px solid #9a07d5;
+
+          border-image: linear-gradient(135deg, #9a07d5 0%, #08e2ac 100%) 2;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+  #production {
+    height: 100vh;
+    max-height: 606px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+
+    .productionTitle {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        h4 {
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 16px;
+          font-family: "Neue Machina";
+          line-height: 100%;
+          text-align: center;
+        }
+        h1 {
+          font-size: 26px;
+          font-family: "Neue Machina";
+          line-height: 137.5%;
+          letter-spacing: -0.65px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        p {
+          font-size: 18px;
+          font-family: "Inter";
+          line-height: 150%;
+          opacity: 0.6000000238418579;
+          max-width: 580px;
+          text-align: center;
+        }
+      }
+      .langWrapper {
+        // background-color: red;
+        max-width: 480px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        .item {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          img {
+            width: 56px;
+          }
+          p {
+            font-size: 20px;
+            font-family: "Neue Machina";
+            line-height: 125%;
+            letter-spacing: -0.5px;
+            opacity: 0.8600000143051147;
+          }
+        }
+      }
+    }
+  }
+  #developments {
+    height: 100vh;
+    // max-height: 397px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 300px 0;
+    position: relative;
+    .developmentsTitle {
+      width: 100%;
+      height: 100vh;
+      max-height: 397px;
+      max-width: 912px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        h4 {
+          background: linear-gradient(
+            90deg,
+            rgba(154, 7, 213, 1),
+            rgba(8, 226, 172, 1)
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 16px;
+          font-family: "Neue Machina";
+          line-height: 100%;
+          text-align: center;
+        }
+        h1 {
+          font-size: 26px;
+          font-family: "Neue Machina";
+          line-height: 137.5%;
+          letter-spacing: -0.65px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        p {
+          font-size: 18px;
+          font-family: "Inter";
+          line-height: 150%;
+          opacity: 0.6000000238418579;
+          max-width: 580px;
+          text-align: center;
+        }
+      }
+      .developmentsWrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .item {
+          max-width: 240px;
+          //   text-align: start;
+          display: flex;
+          align-items: start;
+          height: 100%;
+          p {
+            font-size: 20px;
+            font-family: "Neue Machina";
+            line-height: 125%;
+            letter-spacing: -0.5px;
+            opacity: 0.800000011920929;
+          }
+        }
+      }
+    }
+    .developmentsbg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // background-color: red;
+      background-image: url(../img/3d4.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+ 
+}
+footer {
+  background: var(--bg-white, rgba(255, 255, 255, 0.06));
+  width: 100%;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 942px;
+    p {
+      font-size: 20px;
+      font-family: "Neue Machina";
+      line-height: 125%;
+      letter-spacing: -0.5px;
+      opacity: 0.699999988079071;
+    }
+    img {
+      filter: grayscale(100%);
+    }
+  }
+}
+.bg3d1{
+  position: absolute;
+  width: 300px;
+  right: 0;
+  top: 65%;
+}
+.bg3d2{
+  position: absolute;
+  width: 300px;
+  left: 0;
+  top: 70%;
+}
+
+
+.otzivi {
+  margin-top: 250px !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 912px !important;
+  max-height: 1716px !important;
+  .flex_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .otziv {
+      width: 100%;
+      height: auto;
+      background-color: #000e2a;
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 18px;
+      font-family: "Inter";
+      line-height: 137.5%;
+      opacity: 0.6999999762;
+    }
+  }
+}
